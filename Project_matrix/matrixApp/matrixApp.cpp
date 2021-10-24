@@ -4,5 +4,5 @@
 
 #include "matrixLib.h"
 int main(int argc, char* argv[]){
-    isWork();
+
 }

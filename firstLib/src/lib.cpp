@@ -5,5 +5,5 @@
 
 #include "lib.h"
 void itisWork(){
-    cout<<"is work"<<endl;
+    cout<<"it is work"<<endl;
 }

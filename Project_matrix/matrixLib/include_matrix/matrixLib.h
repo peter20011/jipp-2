@@ -6,14 +6,14 @@
 #define JIPP_2_MATRIXLIB_H
 
 // funkcje o typie int
-/*
+
 int** addMatrix(int** A, int** B, int m, int n);
 
 int** subtractMatrix(int** A, int** B, int m, int n);
 
 int** multiplyMatrix(int** A, int** B, int m, int n, int s);
 
-int** multiplyByScalar(int** A, int B, int m, int n);
+int** multiplyByScalar(int** A, int m, int n, int k);
 
 int** transpozeMatrix(int** A, int m, int n);
 
@@ -56,6 +56,6 @@ void sortRow(double* tab, int n);
 
 void sortRowsInMatrix(double** t, int m, int n);
 
- */
+
 
 #endif //JIPP_2_MATRIXLIB_H

@@ -9,3 +9,5 @@ add_subdirectory(firstLib)
 add_subdirectory(firstLibCall)
 
 add_subdirectory(Project_matrix)
+
+add_subdirectory(FirstClass)

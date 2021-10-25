@@ -32,6 +32,7 @@ void sortRow(int* tab, int n);
 void sortRowsInMatrix(int** t, int m, int n);
 
 // funckje o typie double
+
 double** addMatrix(double** A, double** B, int m, int n);
 
 double** subtractMatrix(double** A, double** B, int m, int n);

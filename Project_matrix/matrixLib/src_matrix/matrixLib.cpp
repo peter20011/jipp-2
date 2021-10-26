@@ -163,7 +163,7 @@ int determinantMatrix(int** A, int m, int n)// m=n
 
 //funkcje typu void\(int)\bool
 
-void powiel(int**A, int** de, int n)
+void powiel(int**A, int** dest, int n)
 {
     for(int i=0;i<n;i++)
     {
@@ -378,13 +378,13 @@ double determinantMatrix(double** A, int m, int n)// m=n
 
 //funkcje typu void\(double)\bool
 
-void powiel(double**A, double** des, int n)
+void powiel(double**A, double** d, int n)
 {
 for(int i=0;i<n;i++)
 {
 for(int j=0;j<n;j++)
 {
-des[i][j]=A[i][j];
+d[i][j]=A[i][j];
 }
 }
 }

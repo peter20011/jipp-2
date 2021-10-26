@@ -47,7 +47,7 @@ double** powerMatrix(double** A, int m, int n, unsigned int p);
 
 double determinantMatrix(double** A, int m, int n);
 
-void powiel(double** A, int** des, int o);
+void powiel(double** A, int** d, int o);
 
 bool matrixIsDiagonal(double** A, int m, int n);
 

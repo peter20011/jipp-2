@@ -21,7 +21,7 @@ int** powerMatrix(int** A, int m, int n, unsigned int p);
 
 int determinantMatrix(int** A, int m, int n);
 
-void powiel(int** A, int** dest, int o);
+void powiel(int** A, int** de, int o);
 
 bool matrixIsDiagonal(int** A, int m, int n);
 
@@ -47,13 +47,13 @@ double** powerMatrix(double** A, int m, int n, unsigned int p);
 
 double determinantMatrix(double** A, int m, int n);
 
-void powiel(double** A, int** d, int o);
+void powiel(double** A, int** d, int g);
 
 bool matrixIsDiagonal(double** A, int m, int n);
 
 void swap(double& A, double &B);
 
-void sortRow(double* tab, int n);
+void sortRow(double* t, int m);
 
 void sortRowsInMatrix(double** t, int m, int n);
 

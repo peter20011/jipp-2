@@ -163,11 +163,11 @@ int determinantMatrix(int** A, int m, int n)// m=n
 
 //funkcje typu void\(int)\bool
 
-void powiel(int**A, int** dest, int n)
+void powiel(int**A, int** de, int g)
 {
-    for(int i=0;i<n;i++)
+    for(int i=0;i<g;i++)
     {
-        for(int j=0;j<n;j++){
+        for(int j=0;j<g;j++){
             de[i][j]=A[i][j];
         }
     }
@@ -378,14 +378,14 @@ double determinantMatrix(double** A, int m, int n)// m=n
 
 //funkcje typu void\(double)\bool
 
-void powiel(double**A, double** d, int n)
+void powiel(double**A, double** d, int g)
 {
-for(int i=0;i<n;i++)
+for(int i=0;i<g;i++)
 {
-for(int j=0;j<n;j++)
-{
-d[i][j]=A[i][j];
-}
+    for(int j=0;j<g;j++)
+    {
+    d[i][j]=A[i][j];
+    }
 }
 }
 
@@ -412,15 +412,15 @@ void swap(double& A, double& B)
     B=tmp;
 }
 
-void sortRow(double* tab, double n)
+void sortRow(double* t, int m)
 {
-    for(int i=0;i<n;i++)
+    for(int i=0;i<m;i++)
     {
-        for(int j=0;j<n-1;j++)
+        for(int j=0;j<m-1;j++)
         {
-            if(tab[j]>tab[j+1])
+            if(t[j]>t[j+1])
             {
-                swap(tab[j],tab[j+1]);
+                swap(t[j],t[j+1]);
             }
         }
     }

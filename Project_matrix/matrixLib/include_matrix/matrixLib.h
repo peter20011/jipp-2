@@ -7,25 +7,25 @@
 
 // funkcje o typie int
 
-int** addMatrix(int** A, int** B, int m, int n);
+int** addMatrix(int** a, int** b, int m, int n);
 
-int** subtractMatrix(int** A, int** B, int m, int n);
+int** subtractMatrix(int** a, int** b, int m, int n);
 
-int** multiplyMatrix(int** A, int** B, int m, int n, int s);
+int** multiplyMatrix(int** a, int** b, int m, int n, int s);
 
-int** multiplyByScalar(int** A, int m, int n, int k);
+int** multiplyByScalar(int** a, int m, int n, int k);
 
-int** transpozeMatrix(int** A, int m, int n);
+int** transpozeMatrix(int** a, int m, int n);
 
-int** powerMatrix(int** A, int m, int n, unsigned int p);
+int** powerMatrix(int** a, int m, int n, unsigned int p);
 
-int determinantMatrix(int** A, int m, int n);
+int determinantMatrix(int** a, int m, int n);
 
-void powiel(int** A, int** de, int o);
+void powiel(int** a, int** de, int o);
 
-bool matrixIsDiagonal(int** A, int m, int n);
+bool matrixIsDiagonal(int** a, int m, int n);
 
-void swap(int& A, int& B);
+void swap(int& a, int& b);
 
 void sortRow(int* tab, int n);
 
@@ -33,25 +33,25 @@ void sortRowsInMatrix(int** t, int m, int n);
 
 // funckje o typie double
 
-double** addMatrix(double** A, double** B, int m, int n);
+double** addMatrix(double** a, double** b, int m, int n);
 
-double** subtractMatrix(double** A, double** B, int m, int n);
+double** subtractMatrix(double** a, double** b, int m, int n);
 
-double** multiplyMatrix(double** A, double** B, int m, int n, int s);
+double** multiplyMatrix(double** a, double** b, int m, int n, int s);
 
-double** multiplyByScalar(double** A, int m, int n , double p);
+double** multiplyByScalar(double** a, int m, int n , double p);
 
-double** transpozeMatrix(double** A, int m, int n);
+double** transpozeMatrix(double** a, int m, int n);
 
-double** powerMatrix(double** A, int m, int n, unsigned int p);
+double** powerMatrix(double** a, int m, int n, unsigned int p);
 
-double determinantMatrix(double** A, int m, int n);
+double determinantMatrix(double** a, int m, int n);
 
-void powiel(double** A, double ** d, int g);
+void powiel(double** a, double ** d, int g);
 
-bool matrixIsDiagonal(double** A, int m, int n);
+bool matrixIsDiagonal(double** a, int m, int n);
 
-void swap(double& A, double &B);
+void swap(double& a, double &b);
 
 void sortRow(double* t, int m);
 

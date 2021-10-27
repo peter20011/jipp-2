@@ -7,7 +7,7 @@
 using namespace  std;
 
 //funkccje o typie int
-int** addMatrix(int** A, int** B, int m, int n)
+int** addMatrix(int** a, int** b, int m, int n)
 {
     int **C= new int *[m];
     for(int i=0;i<m;i++)
@@ -18,14 +18,14 @@ int** addMatrix(int** A, int** B, int m, int n)
     {
         for(int j=0;j<n;j++)
         {
-            C[i][j]=A[i][j]+B[i][j];
+            C[i][j]=a[i][j]+b[i][j];
         }
     }
 
     return C;
 }
 
-int** subtractMatrix(int** A, int** B, int m, int n)
+int** subtractMatrix(int** a, int** b, int m, int n)
 {
     int **D= new int *[m]; // dynamiczna alokacja tablicy wynikowej
     for(int i=0;i<m;i++)
@@ -36,14 +36,14 @@ int** subtractMatrix(int** A, int** B, int m, int n)
     {
         for(int j=0;j<n;j++)
         {
-            D[i][j]=A[i][j]-B[i][j];
+            D[i][j]=a[i][j]-b[i][j];
         }
     }
 
 return D;
 }
 
-int** multiplyMatrix(int** A, int** B, int m, int n, int s)
+int** multiplyMatrix(int** a, int** b, int m, int n, int s)
 {
 int** E=new int*[m];
 for(int i=0;i<m;i++)
@@ -56,14 +56,14 @@ for(int i=0;i<m;i++)
     {
         for(int x=0;x<n;x++)
         {
-            E[i][j]=E[i][j]+A[i][j]*B[i][j];
+            E[i][j]=E[i][j]+a[i][j]*b[i][j];
         }
     }
 }
 return E;
 }
 
-int** multiplyByScalar(int** A, int m, int n, int k)
+int** multiplyByScalar(int** a, int m, int n, int k)
 {
     int** F=new int*[m];
     for(int i=0;i<m;i++)
@@ -74,13 +74,13 @@ int** multiplyByScalar(int** A, int m, int n, int k)
     {
         for(int j=0;i<n;j++)
         {
-            F[i][j]=A[i][j]*k;
+            F[i][j]=a[i][j]*k;
         }
     }
     return F;
 }
 
-int** transpozeMatrix(int** A, int m, int n)
+int** transpozeMatrix(int** a, int m, int n)
 {
     int** G=new int *[n];
     for(int i=0;i<n;i++)
@@ -91,14 +91,14 @@ int** transpozeMatrix(int** A, int m, int n)
     {
         for(int j=0;j<n;j++)
         {
-            G[j][i]=A[i][j];
+            G[j][i]=a[i][j];
         }
     }
 
     return G;
 }
 
-int** powerMatrix(int** A, int m, int n, unsigned int p)
+int** powerMatrix(int** a, int m, int n, unsigned int p)
 {
     int** H=new int *[n];
     for(int i=0;i<m;i++)
@@ -108,11 +108,11 @@ int** powerMatrix(int** A, int m, int n, unsigned int p)
 
     int**I;
 
-    powiel(A,H,m);
+    powiel(a,H,m);
 
     for(int i=0;i<p-1;i++)
     {
-        I= multiplyMatrix(A,H,m,m,m);
+        I= multiplyMatrix(a,H,m,m,m);
         powiel(I,H,m);
 
         for(int i=0;i<m;i++)
@@ -125,7 +125,7 @@ int** powerMatrix(int** A, int m, int n, unsigned int p)
     return H;
 }
 
-int determinantMatrix(int** A, int m, int n)// m=n
+int determinantMatrix(int** a, int m, int n)// m=n
 {
     int det = 0;
 
@@ -134,7 +134,7 @@ int determinantMatrix(int** A, int m, int n)// m=n
         su[i]=new int[m];
 
     if (m==2)
-        return ((A[0][0] * A[1][1]) - (A[1][0] * A[0][1]));
+        return ((a[0][0] * a[1][1]) - (a[1][0] * a[0][1]));
     else {
         for (int x = 0; x <  m; x++) {
             int si = 0;
@@ -145,12 +145,12 @@ int determinantMatrix(int** A, int m, int n)// m=n
                     {
                         continue;
                     }
-                    su[si][sj] = A[i][j];
+                    su[si][sj] = a[i][j];
                     sj++;
                 }
                 si++;
             }
-            det = det + (pow(-1, x) * A[0][x] * determinantMatrix(su, n-1, 0));
+            det = det + (pow(-1, x) * a[0][x] * determinantMatrix(su, n-1, 0));
         }
     }
 
@@ -163,23 +163,23 @@ int determinantMatrix(int** A, int m, int n)// m=n
 
 //funkcje typu void\(int)\bool
 
-void powiel(int**A, int** de, int g)
+void powiel(int**a, int** de, int g)
 {
     for(int i=0;i<g;i++)
     {
         for(int j=0;j<g;j++){
-            de[i][j]=A[i][j];
+            de[i][j]=a[i][j];
         }
     }
 }
 
-bool matrixIsDiagonal(int** A,int m,int n)
+bool matrixIsDiagonal(int** a,int m,int n)
 {
     for(int i=0;i<m;i++)
     {
         for(int j=0;j<n;j++)
         {
-            if((j!=i) && (A[i][j]!=0))
+            if((j!=i) && (a[i][j]!=0))
             {
                 return false;
             }
@@ -189,11 +189,11 @@ bool matrixIsDiagonal(int** A,int m,int n)
     return true;
 }
 
-void swap(int& A, int& B)
+void swap(int& a, int& b)
 {
-    int tmp=A;
-    A=B;
-    B=tmp;
+    int tmp=a;
+    a=b;
+    b=tmp;
 }
 
 void sortRow(int* tab, int n)
@@ -222,7 +222,7 @@ for(int i=0;i<m;i++)
 
 //funkccje o typie double
 
-double** addMatrix(double** A, double** B, int m, int n)
+double** addMatrix(double** a, double** b, int m, int n)
 {
     double **C= new double *[m];
     for(int i=0;i<m;i++)
@@ -233,14 +233,14 @@ double** addMatrix(double** A, double** B, int m, int n)
     {
         for(int j=0;j<n;j++)
         {
-            C[i][j]=A[i][j]+B[i][j];
+            C[i][j]=a[i][j]+b[i][j];
         }
     }
 
     return C;
 }
 
-double** subtractMatrix(double** A, double** B, int m, int n)
+double** subtractMatrix(double** a, double** b, int m, int n)
 {
     double **D= new double *[m]; // dynamiczna alokacja tablicy wynikowej
     for(int i=0;i<m;i++)
@@ -251,14 +251,14 @@ double** subtractMatrix(double** A, double** B, int m, int n)
     {
         for(int j=0;j<n;j++)
         {
-            D[i][j]=A[i][j]-B[i][j];
+            D[i][j]=a[i][j]-b[i][j];
         }
     }
 
     return D;
 }
 
-double** multiplyMatrix(double** A, double** B, int m, int n, int s)
+double** multiplyMatrix(double** a, double** b, int m, int n, int s)
 {
     double** E=new double*[m];
     for(int i=0;i<m;i++)
@@ -271,14 +271,14 @@ double** multiplyMatrix(double** A, double** B, int m, int n, int s)
         {
             for(int x=0;x<n;x++)
             {
-                E[i][j]=E[i][j]+A[i][j]*B[i][j];
+                E[i][j]=E[i][j]+a[i][j]*b[i][j];
             }
         }
     }
     return E;
 }
 
-double** multiplyByScalar(double** A, int m, int n, double k)
+double** multiplyByScalar(double** a, int m, int n, double p)
 {
     double** F=new double*[m];
     for(int i=0;i<m;i++)
@@ -289,13 +289,13 @@ double** multiplyByScalar(double** A, int m, int n, double k)
     {
         for(int j=0;i<n;j++)
         {
-            F[i][j]=A[i][j]*k;
+            F[i][j]=a[i][j]*p;
         }
     }
     return F;
 }
 
-double** transpozeMatrix(double** A, int m, int n)
+double** transpozeMatrix(double** a, int m, int n)
 {
     double** G=new double *[n];
     for(int i=0;i<n;i++)
@@ -306,14 +306,14 @@ double** transpozeMatrix(double** A, int m, int n)
     {
         for(int j=0;j<n;j++)
         {
-            G[j][i]=A[i][j];
+            G[j][i]=a[i][j];
         }
     }
 
     return G;
 }
 
-double** powerMatrix(double** A, int m, int n, unsigned int p)
+double** powerMatrix(double** a, int m, int n, unsigned int p)
 {
     double** H=new double *[n];
     for(int i=0;i<m;i++)
@@ -323,11 +323,11 @@ double** powerMatrix(double** A, int m, int n, unsigned int p)
 
     double**I;
 
-    powiel(A,H,m);
+    powiel(a,H,m);
 
     for(int i=0;i<p-1;i++)
     {
-        I= multiplyMatrix(A,H,m,m,m);
+        I= multiplyMatrix(a,H,m,m,m);
         powiel(I,H,m);
 
         for(int i=0;i<m;i++)
@@ -340,7 +340,7 @@ double** powerMatrix(double** A, int m, int n, unsigned int p)
     return H;
 }
 
-double determinantMatrix(double** A, int m, int n)// m=n
+double determinantMatrix(double** a, int m, int n)// m=n
 {
     double det = 0;
 
@@ -349,7 +349,7 @@ double determinantMatrix(double** A, int m, int n)// m=n
         su[i]=new double[m];
 
     if (m==2)
-        return ((A[0][0] * A[1][1]) - (A[1][0] * A[0][1]));
+        return ((a[0][0] * a[1][1]) - (a[1][0] * a[0][1]));
     else {
         for (int x = 0; x <  m; x++) {
             int si = 0;
@@ -360,12 +360,12 @@ double determinantMatrix(double** A, int m, int n)// m=n
                     {
                         continue;
                     }
-                    su[si][sj] = A[i][j];
+                    su[si][sj] = a[i][j];
                     sj++;
                 }
                 si++;
             }
-            det = det + (pow(-1, x) * A[0][x] * determinantMatrix(su, n-1, 0));
+            det = det + (pow(-1, x) * a[0][x] * determinantMatrix(su, n-1, 0));
         }
     }
 
@@ -378,24 +378,24 @@ double determinantMatrix(double** A, int m, int n)// m=n
 
 //funkcje typu void\(double)\bool
 
-void powiel(double**A, double** d, int g)
+void powiel(double**a, double** d, int g)
 {
 for(int i=0;i<g;i++)
 {
     for(int j=0;j<g;j++)
     {
-    d[i][j]=A[i][j];
+    d[i][j]=a[i][j];
     }
 }
 }
 
-bool matrixIsDiagonal(double** A,int m,int n)
+bool matrixIsDiagonal(double** a,int m,int n)
 {
     for(int i=0;i<m;i++)
     {
         for(int j=0;j<n;j++)
         {
-            if((j!=i) && (A[i][j]!=0))
+            if((j!=i) && (a[i][j]!=0))
             {
                 return false;
             }
@@ -405,11 +405,11 @@ bool matrixIsDiagonal(double** A,int m,int n)
     return true;
 }
 
-void swap(double& A, double& B)
+void swap(double& a, double& b)
 {
-    double tmp=A;
-    A=B;
-    B=tmp;
+    double tmp=a;
+    a=b;
+    b=tmp;
 }
 
 void sortRow(double* t, int m)

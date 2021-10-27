@@ -21,17 +21,11 @@ int main(int argc, char* argv[]){
                     cin>>m;
                     cout<<"Wczytaj ilość kolumn macierzy:"<<endl;
                     cin>>n;
-                    int **A=new int*[m];
-                    for(int i=0;i<m;i++)
-                    {
-                        A[i]=new int [n];
-                    }
+                    int **A;
+                    int **B;
+                    A=allocation(m,n);
+                    B= allocation(m,n);
 
-                    int**B=new int*[m];
-                    for(int i=0;i<m;i++)
-                    {
-                        B[i]=new int [n];
-                    }
                     cout<<"Wczytaj wartosci do macierzy A:"<<endl;
                     cout<<"Macierz wczytywana jest wierszami"<<endl;
                     saveMatrix(A,m,n);
@@ -46,6 +40,12 @@ int main(int argc, char* argv[]){
                     printMatrix(B,m,n);
                     cout<<"Macierz wynikowa:"<<endl;
                     printMatrix(C,m,n);
+
+                    //delate
+                    delMatrix(A,m);
+                    delMatrix(B,m);
+                    delMatrix(C,m);
+
                 }
                 else if(z==2)//double
                 {

@@ -503,3 +503,39 @@ void err(){
     cout<<"Blad\n";
     cout<<"Zapoznaj sie z dokumentacja\n";
 }
+
+void delMatrix(int** a, int m)
+{
+    for( int i = 0; i < m; ++i )
+        delete [] a[ i ];
+
+    delete [] a;
+}
+
+void delMatrix(double**a,int m)
+{
+    for( int i = 0; i < m; ++i )
+        delete [] a[ i ];
+
+    delete [] a;
+}
+
+int **allocation( int m, int n)
+{
+    int **a = new int* [ m ];
+
+    for( int i = 0; i < m; ++i )
+        a[ i ] = new int[ n ];
+
+    return a;
+}
+
+double **allocations( int m, int n)
+{
+    double **a = new double* [ m ];
+
+    for( int i = 0; i < m; ++i )
+        a[ i ] = new double[ n ];
+
+    return a;
+}

@@ -67,6 +67,14 @@ void saveMatrix(int **a, int m, int n);
 
 void saveMatrix(double **a, int m, int n);
 
+void delMatrix(int **a, int m);
+
+void delMatrix(double **a, int m);
+
+int **allocation(int m, int n);
+
+double **allocations(int m,int n);
+
 void help();
 
 void choice();

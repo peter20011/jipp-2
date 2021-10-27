@@ -20,8 +20,32 @@ int main(int argc, char* argv[]){
                     cout<<"Wczytaj ilość wierzy macieczy:"<<endl;
                     cin>>m;
                     cout<<"Wczytaj ilość kolumn macierzy:"<<endl;
-                    cin>>n
+                    cin>>n;
+                    int **A=new int*[m];
+                    for(int i=0;i<m;i++)
+                    {
+                        A[i]=new int [n];
+                    }
 
+                    int**B=new int*[m];
+                    for(int i=0;i<m;i++)
+                    {
+                        B[i]=new int [n];
+                    }
+                    cout<<"Wczytaj wartosci do macierzy A:"<<endl;
+                    cout<<"Macierz wczytywana jest wierszami"<<endl;
+                    saveMatrix(A,m,n);
+                    cout<<"Wczytaj wartosci do macierzy B:"<<endl;
+                    cout<<"Macierz wczytywana jest wierszami"<<endl;
+                    saveMatrix(B,m,n);
+                    int **C;
+                    C= addMatrix(A,B,m,n);
+                    cout<<"Macierz A"<<endl;
+                    printMatrix(A,m,n);
+                    cout<<"Macierz B"<<endl;
+                    printMatrix(B,m,n);
+                    cout<<"Macierz wynikowa:"<<endl;
+                    printMatrix(C,m,n);
                 }
                 else if(z==2)//double
                 {

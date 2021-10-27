@@ -7,6 +7,15 @@
 using namespace  std;
 
 //funkccje o typie int
+
+/**
+ *
+ * @param a
+ * @param b
+ * @param m
+ * @param n
+ * @return
+ */
 int** addMatrix(int** a, int** b, int m, int n)
 {
     int **C= new int *[m];
@@ -457,6 +466,7 @@ void printMatrix(double**a,int m,int n)
     }
 }
 
+
 void saveMatrix(int**a,int m,int n)
 {
     int w, k;
@@ -475,4 +485,21 @@ void saveMatrix(double**a,int m,int n)
             cin >> a[w][k];
         }
     }
+
+}
+
+void help(){
+    cout<<"Dokumentacja";
+
+}
+
+void choice(){
+    cout<<"Jaki rodzaj macierzy chcesz wczytac"<<endl;
+    cout<<"Int wybierz 1"<<endl;
+    cout<<"Double wybierz 2"<<endl;
+}
+
+void err(){
+    cout<<"Blad\n";
+    cout<<"Zapoznaj sie z dokumentacja\n";
 }

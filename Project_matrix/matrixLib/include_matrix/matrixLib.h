@@ -65,6 +65,13 @@ void printMatrix(double **a,int m, int n);
 
 void saveMatrix(int **a, int m, int n);
 
-void saveMAtrix(double **a, int m, int n);
+void saveMatrix(double **a, int m, int n);
+
+void help();
+
+void choice();
+
+void err();
+
 
 #endif //JIPP_2_MATRIXLIB_H

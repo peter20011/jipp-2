@@ -24,7 +24,7 @@ int main(int argc, char* argv[]){
                     int **A;
                     int **B;
                     A=allocation(m,n);
-                    B= allocation(m,n);
+                    B=allocation(m,n);
 
                     cout<<"Wczytaj wartosci do macierzy A:"<<endl;
                     cout<<"Macierz wczytywana jest wierszami"<<endl;

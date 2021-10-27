@@ -434,3 +434,45 @@ void sortRowsInMatrix(double** t, int m, int n)
         sortRow(t[i],n);
     }
 }
+
+//funkcje pomocnicze
+void printMatrix(int **a, int m,int n)
+{
+    int w, k;
+    for (w = 0; w < m; w++) {
+        for (k = 0; k < n; k++)
+            cout << a[w][k] << " ";
+        cout << endl;
+    }
+}
+
+
+void printMatrix(double**a,int m,int n)
+{
+    int w, k;
+    for (w = 0; w < m; w++) {
+        for (k = 0; k < n; k++)
+            cout << a[w][k] << " ";
+        cout << endl;
+    }
+}
+
+void saveMatrix(int**a,int m,int n)
+{
+    int w, k;
+    for (w = 0; w < m; w++) {
+        for (k = 0; k < n; k++) {
+            cin >> a[w][k];
+        }
+    }
+}
+
+void saveMatrix(double**a,int m,int n)
+{
+    int w, k;
+    for (w = 0; w < m; w++) {
+        for (k = 0; k < n; k++) {
+            cin >> a[w][k];
+        }
+    }
+}

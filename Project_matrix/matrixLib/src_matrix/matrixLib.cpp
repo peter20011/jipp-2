@@ -9,10 +9,10 @@ using namespace  std;
 //funkccje o typie int
 
 /**
- *
- * @param a
- * @param b
- * @param m
+ * Funkcja odpowiadająca za dodawanie macierzy
+ * @param a przekazanie macierzy a do funckji
+ * @param b przekazanie macierzy a do funckji
+ * @param m ilość
  * @param n
  * @return
  */

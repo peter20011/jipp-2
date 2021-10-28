@@ -4,7 +4,7 @@
 
 #include "matrixLib.h"
 #include <iostream>
-#include <limits>
+
 using namespace  std;
 int main(int argc, char* argv[]) {
 
@@ -17,9 +17,9 @@ int main(int argc, char* argv[]) {
                     {
                         int m, n;
                         cout << "Wczytaj ilosc wierzy macieczy:" << endl;
-                        cin >> m;
+                        m=check();
                         cout << "Wczytaj ilosc kolumn macierzy:" << endl;
-                        cin >> n;
+                        n=check();
                         int **A;
                         int **B;
                         A = allocation(m, n);

@@ -4,6 +4,7 @@
 
 #include "matrixLib.h"
 #include <iostream>
+#include <limits>
 using namespace  std;
 
 //funkccje o typie int
@@ -535,4 +536,28 @@ double **allocations( int m, int n)
         a[ i ] = new double[ n ];
 
     return a;
+}
+
+
+int check(){
+    int liczba;
+    while(true)
+    {
+        cin >> liczba;
+        if(cin.fail())
+        {
+            cout << "Blad" << endl;
+            cin.clear();
+            cin.ignore(INT_MAX,'\n');
+            cin.ignore();
+        }
+
+        else
+        {
+            break;
+        }
+    }
+
+    return liczba;
+
 }

@@ -81,5 +81,6 @@ void choice();
 
 void err();
 
+int check();
 
 #endif //JIPP_2_MATRIXLIB_H

@@ -470,7 +470,9 @@ void saveMatrix(int**a,int m,int n)
     int w, k;
     for (w = 0; w < m; w++) {
         for (k = 0; k < n; k++) {
-            cin >> a[w][k];
+            int o;
+            o=check();
+            a[w][k]=o;
         }
     }
 }
@@ -549,14 +551,13 @@ int check(){
             cout << "Blad" << endl;
             cin.clear();
             cin.ignore(INT_MAX,'\n');
-            cin.ignore();
-        }
 
-        else
-        {
+        }
+        else{
             break;
         }
     }
+
 
     return liczba;
 

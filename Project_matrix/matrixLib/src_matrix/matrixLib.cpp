@@ -458,7 +458,7 @@ void printMatrix(double**a,int m,int n)
     int w, k;
     for (w = 0; w < m; w++) {
         for (k = 0; k < n; k++)
-            cout << a[w][k] << " ";
+            cout << a[w][k] << "  ";
         cout << endl;
     }
 }

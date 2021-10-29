@@ -423,5 +423,37 @@ int main(int argc, char* argv[]) {
                 delMatrix(A,m);
             }
         }
+        if (strcmp(argv[1], "determinantMatrix") == 0){
+            choice();
+            int z;
+            cin >> z;
+            if(z==1)
+            {
+                int m, n;
+                cout << "Wczytaj ilosc wierzy macieczy:" << endl;
+                m = check();
+                cout << "Wczytaj ilosc kolumn macierzy:" << endl;
+                n = check();
+                int **A;
+                A= allocation(m,n);
+
+                cout << "Wczytaj wartosci do macierzy A:" << endl;
+                cout << "Macierz wczytywana jest wierszami" << endl;
+                saveMatrix(A, m, n);
+
+                int det;
+                det= determinantMatrix(A,m,n);
+
+                cout << "Macierz A" << endl;
+                printMatrix(A, m, n);
+
+                cout<<"Wartosc wyznacznika wynosi "<<det<<endl;
+
+            }
+            else if(z==2)
+            {
+
+            }
+        }
     }
 }

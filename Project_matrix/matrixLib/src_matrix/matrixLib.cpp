@@ -5,7 +5,7 @@
 #include "matrixLib.h"
 #include <iostream>
 #include <limits>
-
+#include <math.h>
 
 using namespace  std;
 

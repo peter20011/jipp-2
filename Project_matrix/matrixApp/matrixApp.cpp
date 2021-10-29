@@ -449,6 +449,8 @@ int main(int argc, char* argv[]) {
 
                 cout<<"Wartosc wyznacznika wynosi "<<det<<endl;
 
+                delMatrix(A,m);
+
             }
             else if(z==2)
             {
@@ -471,6 +473,59 @@ int main(int argc, char* argv[]) {
                 printMatrix(A, m, n);
 
                 cout<<"Wartosc wyznacznika wynosi "<<det<<endl;
+                delMatrix(A,m);
+            }
+        }
+        if (strcmp(argv[1], "matrixIsDiagonal") == 0){
+            choice();
+            int z;
+            cin >> z;
+            if(z==1){
+                int m, n;
+                cout << "Wczytaj ilosc wierzy macieczy:" << endl;
+                m = check();
+                cout << "Wczytaj ilosc kolumn macierzy:" << endl;
+                n = check();
+                int **A;
+                A= allocation(m,n);
+
+                cout << "Wczytaj wartosci do macierzy A:" << endl;
+                cout << "Macierz wczytywana jest wierszami" << endl;
+                saveMatrix(A, m, n);
+
+                cout << "Macierz A" << endl;
+                printMatrix(A, m, n);
+
+                if(matrixIsDiagonal(A,m,n)){
+                    cout<<"Macierz A jest diagonalna"<<endl;
+                }
+                else{
+                    cout<<"Macierz A nie jest diagonalna"<<endl;
+                }
+            }
+            else if(z==2)
+            {
+                int m, n;
+                cout << "Wczytaj ilosc wierzy macieczy:" << endl;
+                m = check();
+                cout << "Wczytaj ilosc kolumn macierzy:" << endl;
+                n = check();
+                double **A;
+                A= allocations(m,n);
+
+                cout << "Wczytaj wartosci do macierzy A:" << endl;
+                cout << "Macierz wczytywana jest wierszami" << endl;
+                saveMatrix(A, m, n);
+
+                cout << "Macierz A" << endl;
+                printMatrix(A, m, n);
+
+                if(matrixIsDiagonal(A,m,n)){
+                    cout<<"Macierz A jest diagonalna"<<endl;
+                }
+                else{
+                    cout<<"Macierz A nie jest diagonalna"<<endl;
+                }
             }
         }
     }

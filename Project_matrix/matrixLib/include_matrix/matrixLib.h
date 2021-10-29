@@ -79,7 +79,7 @@ void help();
 
 void choice();
 
-void err();
+void er();
 
 int check();
 

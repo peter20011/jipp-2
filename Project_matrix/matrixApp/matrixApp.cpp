@@ -165,13 +165,13 @@ int main(int argc, char* argv[]) {
             cin >> z;
             if (z == 1)  //int
             {
-                int m, n,s;
+                int m, n, s;
                 cout << "Wczytaj ilosc wierzy macieczy pierwszej:" << endl;
                 m = check();
                 cout << "Wczytaj ilosc kolumn macierzy pierwszej:" << endl;
-                n=check();
+                n = check();
                 cout << "Wczytaj ilosc kolumn macieczy drugiej:" << endl;
-                s=check();
+                s = check();
 
                 int **A;
                 int **B;
@@ -185,7 +185,7 @@ int main(int argc, char* argv[]) {
                 cout << "Macierz wczytywana jest wierszami" << endl;
                 saveMatrix(B, n, s);
                 int **E;
-                E = multiplyMatrix(A, B, m, n,s);
+                E = multiplyMatrix(A, B, m, n, s);
                 cout << "Macierz A" << endl;
                 printMatrix(A, m, n);
                 cout << "Macierz B" << endl;
@@ -198,15 +198,14 @@ int main(int argc, char* argv[]) {
                 delMatrix(B, n);
                 delMatrix(E, m);
 
-            }
-            else if (z == 2) {
-                int m, n,s;
+            } else if (z == 2) {
+                int m, n, s;
                 cout << "Wczytaj ilosc wierzy macieczy pierwszej:" << endl;
                 m = check();
                 cout << "Wczytaj ilosc kolumn macierzy pierwszej:" << endl;
-                n=check();
+                n = check();
                 cout << "Wczytaj ilosc kolumn macieczy drugiej:" << endl;
-                s=check();
+                s = check();
 
                 double **A;
                 double **B;
@@ -220,7 +219,7 @@ int main(int argc, char* argv[]) {
                 cout << "Macierz wczytywana jest wierszami" << endl;
                 saveMatrix(B, n, s);
                 double **E;
-                E = multiplyMatrix(A, B, m, n,s);
+                E = multiplyMatrix(A, B, m, n, s);
                 cout << "Macierz A" << endl;
                 printMatrix(A, m, n);
                 cout << "Macierz B" << endl;
@@ -237,136 +236,127 @@ int main(int argc, char* argv[]) {
 
         // scalar
 
-        if (strcmp(argv[1], "multiplyBytScalar") == 0){
-                choice();
-                int z;
-                cin >> z;
-                if(z==1)
-                {
-                    int m, n, k;
-                    cout << "Wczytaj ilosc wierzy macieczy:" << endl;
-                    m = check();
-                    cout << "Wczytaj ilosc kolumn macierzy:" << endl;
-                    n = check();
-                    cout<<"Wczytaj wartosc scalara:"<<endl;
-                    k=check();
-                    int **A;
-                    A= allocation(m,n);
+        if (strcmp(argv[1], "multiplyBytScalar") == 0) {
+            choice();
+            int z;
+            cin >> z;
+            if (z == 1) {
+                int m, n, k;
+                cout << "Wczytaj ilosc wierzy macieczy:" << endl;
+                m = check();
+                cout << "Wczytaj ilosc kolumn macierzy:" << endl;
+                n = check();
+                cout << "Wczytaj wartosc scalara:" << endl;
+                k = check();
+                int **A;
+                A = allocation(m, n);
 
-                    cout << "Wczytaj wartosci do macierzy A:" << endl;
-                    cout << "Macierz wczytywana jest wierszami" << endl;
-                    saveMatrix(A, m, n);
-
-
-                    int **F;
-                    F=multiplyByScalar(A,m,n,k);
-                    cout << "Macierz A" << endl;
-                    printMatrix(A, m, n);
-                    cout<<"Skalar wynosi "<<k<<endl;
-                    cout << "Macierz wynikowa" << endl;
-                    printMatrix(F,m, n);
-
-                    delMatrix(F,m);
-                    delMatrix(A,m);
-                }
-                else if(z==2)
-                {
-                    int m, n;
-                    double k;
-                    cout << "Wczytaj ilosc wierzy macieczy:" << endl;
-                    m = check();
-                    cout << "Wczytaj ilosc kolumn macierzy:" << endl;
-                    n = check();
-                    cout<<"Wczytaj wartosc scalara:"<<endl;
-                    k=check_double();
-                    double **A;
-                    A= allocations(m,n);
-
-                    cout << "Wczytaj wartosci do macierzy A:" << endl;
-                    cout << "Macierz wczytywana jest wierszami" << endl;
-                    saveMatrix(A, m, n);
+                cout << "Wczytaj wartosci do macierzy A:" << endl;
+                cout << "Macierz wczytywana jest wierszami" << endl;
+                saveMatrix(A, m, n);
 
 
-                    double **F;
-                    F=multiplyByScalar(A,m,n,k);
-                    cout << "Macierz A" << endl;
-                    printMatrix(A, m, n);
-                    cout<<"Skalar wynosi "<<k<<endl;
-                    cout << "Macierz wynikowa" << endl;
-                    printMatrix(F,m, n);
+                int **F;
+                F = multiplyByScalar(A, m, n, k);
+                cout << "Macierz A" << endl;
+                printMatrix(A, m, n);
+                cout << "Skalar wynosi " << k << endl;
+                cout << "Macierz wynikowa" << endl;
+                printMatrix(F, m, n);
 
-                    delMatrix(F,m);
-                    delMatrix(A,m);
-                }
+                delMatrix(F, m);
+                delMatrix(A, m);
+            } else if (z == 2) {
+                int m, n;
+                double k;
+                cout << "Wczytaj ilosc wierzy macieczy:" << endl;
+                m = check();
+                cout << "Wczytaj ilosc kolumn macierzy:" << endl;
+                n = check();
+                cout << "Wczytaj wartosc scalara:" << endl;
+                k = check_double();
+                double **A;
+                A = allocations(m, n);
+
+                cout << "Wczytaj wartosci do macierzy A:" << endl;
+                cout << "Macierz wczytywana jest wierszami" << endl;
+                saveMatrix(A, m, n);
+
+
+                double **F;
+                F = multiplyByScalar(A, m, n, k);
+                cout << "Macierz A" << endl;
+                printMatrix(A, m, n);
+                cout << "Skalar wynosi " << k << endl;
+                cout << "Macierz wynikowa" << endl;
+                printMatrix(F, m, n);
+
+                delMatrix(F, m);
+                delMatrix(A, m);
+            }
         }
 
         //transponowanie
 
-        if (strcmp(argv[1], "transpozeMatrix") == 0)
-        {
+        if (strcmp(argv[1], "transpozeMatrix") == 0) {
             choice();
             int z;
             cin >> z;
-            if(z==1)
-            {
+            if (z == 1) {
                 int m, n;
                 cout << "Wczytaj ilosc wierzy macieczy:" << endl;
                 m = check();
                 cout << "Wczytaj ilosc kolumn macierzy:" << endl;
                 n = check();
                 int **A;
-                A= allocation(m,n);
+                A = allocation(m, n);
 
                 cout << "Wczytaj wartosci do macierzy A:" << endl;
                 cout << "Macierz wczytywana jest wierszami" << endl;
                 saveMatrix(A, m, n);
 
                 int **G;
-                G= transpozeMatrix(A,m,n);
+                G = transpozeMatrix(A, m, n);
 
                 cout << "Macierz A" << endl;
                 printMatrix(A, m, n);
                 cout << "Transponowana macierz A" << endl;
-                printMatrix(G,m,n);
+                printMatrix(G, m, n);
 
-                delMatrix(G,m);
-                delMatrix(A,m);
+                delMatrix(G, m);
+                delMatrix(A, m);
 
-            }
-
-            else if(z==2)
-            {
+            } else if (z == 2) {
                 int m, n;
                 cout << "Wczytaj ilosc wierzy macieczy:" << endl;
                 m = check();
                 cout << "Wczytaj ilosc kolumn macierzy:" << endl;
                 n = check();
                 double **A;
-                A= allocations(m,n);
+                A = allocations(m, n);
 
                 cout << "Wczytaj wartosci do macierzy A:" << endl;
                 cout << "Macierz wczytywana jest wierszami" << endl;
                 saveMatrix(A, m, n);
 
                 double **G;
-                G= transpozeMatrix(A,m,n);
+                G = transpozeMatrix(A, m, n);
 
                 cout << "Macierz A" << endl;
                 printMatrix(A, m, n);
                 cout << "Transponowana macierz A" << endl;
-                printMatrix(G,m,n);
+                printMatrix(G, m, n);
 
-                delMatrix(G,m);
-                delMatrix(A,m);
+                delMatrix(G, m);
+                delMatrix(A, m);
 
             }
         }
-        if (strcmp(argv[1], "powerMatrix") == 0){
+        if (strcmp(argv[1], "powerMatrix") == 0) {
             choice();
             int z;
             cin >> z;
-            if(z==1)
-            {
+            if (z == 1) {
                 int m, n;
                 unsigned int p;
                 cout << "Wczytaj ilosc wierzy macieczy:" << endl;
@@ -376,26 +366,24 @@ int main(int argc, char* argv[]) {
                 cout << "Wczytaj stopien potegi:" << endl;
                 p = check();
                 int **A;
-                A= allocation(m,n);
+                A = allocation(m, n);
 
                 cout << "Wczytaj wartosci do macierzy A:" << endl;
                 cout << "Macierz wczytywana jest wierszami" << endl;
                 saveMatrix(A, m, n);
 
                 int **H;
-                H= powerMatrix(A,m,n,p);
+                H = powerMatrix(A, m, n, p);
 
                 cout << "Macierz A" << endl;
                 printMatrix(A, m, n);
-                cout << "Macierz podniesiona do potegi "<< p << endl;
-                printMatrix(H,m,n);
+                cout << "Macierz podniesiona do potegi " << p << endl;
+                printMatrix(H, m, n);
 
-                delMatrix(H,m);
-                delMatrix(A,m);
+                delMatrix(H, m);
+                delMatrix(A, m);
 
-            }
-            else if(z==2)
-            {
+            } else if (z == 2) {
                 int m, n;
                 unsigned int p;
                 cout << "Wczytaj ilosc wierzy macieczy:" << endl;
@@ -405,89 +393,88 @@ int main(int argc, char* argv[]) {
                 cout << "Wczytaj stopien potegi:" << endl;
                 p = check();
                 double **A;
-                A= allocations(m,n);
+                A = allocations(m, n);
 
                 cout << "Wczytaj wartosci do macierzy A:" << endl;
                 cout << "Macierz wczytywana jest wierszami" << endl;
                 saveMatrix(A, m, n);
 
                 double **H;
-                H= powerMatrix(A,m,n,p);
+                H = powerMatrix(A, m, n, p);
 
                 cout << "Macierz A" << endl;
                 printMatrix(A, m, n);
-                cout << "Macierz podniesiona do potegi "<< p << endl;
-                printMatrix(H,m,n);
+                cout << "Macierz podniesiona do potegi " << p << endl;
+                printMatrix(H, m, n);
 
-                delMatrix(H,m);
-                delMatrix(A,m);
+                delMatrix(H, m);
+                delMatrix(A, m);
             }
         }
-        if (strcmp(argv[1], "determinantMatrix") == 0){
+
+        if (strcmp(argv[1], "determinantMatrix") == 0) {
             choice();
             int z;
             cin >> z;
-            if(z==1)
-            {
+            if (z == 1) {
                 int m, n;
                 cout << "Wczytaj ilosc wierzy macieczy:" << endl;
                 m = check();
                 cout << "Wczytaj ilosc kolumn macierzy:" << endl;
                 n = check();
                 int **A;
-                A= allocation(m,n);
+                A = allocation(m, n);
 
                 cout << "Wczytaj wartosci do macierzy A:" << endl;
                 cout << "Macierz wczytywana jest wierszami" << endl;
                 saveMatrix(A, m, n);
 
                 int det;
-                det= determinantMatrix(A,m,n);
+                det = determinantMatrix(A, m, n);
 
                 cout << "Macierz A" << endl;
                 printMatrix(A, m, n);
 
-                cout<<"Wartosc wyznacznika wynosi "<<det<<endl;
+                cout << "Wartosc wyznacznika wynosi " << det << endl;
 
-                delMatrix(A,m);
+                delMatrix(A, m);
 
-            }
-            else if(z==2)
-            {
+            } else if (z == 2) {
                 int m, n;
                 cout << "Wczytaj ilosc wierzy macieczy:" << endl;
                 m = check();
                 cout << "Wczytaj ilosc kolumn macierzy:" << endl;
                 n = check();
                 double **A;
-                A= allocations(m,n);
+                A = allocations(m, n);
 
                 cout << "Wczytaj wartosci do macierzy A:" << endl;
                 cout << "Macierz wczytywana jest wierszami" << endl;
                 saveMatrix(A, m, n);
 
                 double det;
-                det= determinantMatrix(A,m,n);
+                det = determinantMatrix(A, m, n);
 
                 cout << "Macierz A" << endl;
                 printMatrix(A, m, n);
 
-                cout<<"Wartosc wyznacznika wynosi "<<det<<endl;
-                delMatrix(A,m);
+                cout << "Wartosc wyznacznika wynosi " << det << endl;
+                delMatrix(A, m);
             }
         }
-        if (strcmp(argv[1], "matrixIsDiagonal") == 0){
+
+        if (strcmp(argv[1], "matrixIsDiagonal") == 0) {
             choice();
             int z;
             cin >> z;
-            if(z==1){
+            if (z == 1) {
                 int m, n;
                 cout << "Wczytaj ilosc wierzy macieczy:" << endl;
                 m = check();
                 cout << "Wczytaj ilosc kolumn macierzy:" << endl;
                 n = check();
                 int **A;
-                A= allocation(m,n);
+                A = allocation(m, n);
 
                 cout << "Wczytaj wartosci do macierzy A:" << endl;
                 cout << "Macierz wczytywana jest wierszami" << endl;
@@ -496,23 +483,20 @@ int main(int argc, char* argv[]) {
                 cout << "Macierz A" << endl;
                 printMatrix(A, m, n);
 
-                if(matrixIsDiagonal(A,m,n)){
-                    cout<<"Macierz A jest diagonalna"<<endl;
+                if (matrixIsDiagonal(A, m, n)) {
+                    cout << "Macierz A jest diagonalna" << endl;
+                } else {
+                    cout << "Macierz A nie jest diagonalna" << endl;
                 }
-                else{
-                    cout<<"Macierz A nie jest diagonalna"<<endl;
-                }
-                delMatrix(A,m);
-            }
-            else if(z==2)
-            {
+                delMatrix(A, m);
+            } else if (z == 2) {
                 int m, n;
                 cout << "Wczytaj ilosc wierzy macieczy:" << endl;
                 m = check();
                 cout << "Wczytaj ilosc kolumn macierzy:" << endl;
                 n = check();
                 double **A;
-                A= allocations(m,n);
+                A = allocations(m, n);
 
                 cout << "Wczytaj wartosci do macierzy A:" << endl;
                 cout << "Macierz wczytywana jest wierszami" << endl;
@@ -521,38 +505,106 @@ int main(int argc, char* argv[]) {
                 cout << "Macierz A" << endl;
                 printMatrix(A, m, n);
 
-                if(matrixIsDiagonal(A,m,n)){
-                    cout<<"Macierz A jest diagonalna"<<endl;
+                if (matrixIsDiagonal(A, m, n)) {
+                    cout << "Macierz A jest diagonalna" << endl;
+                } else {
+                    cout << "Macierz A nie jest diagonalna" << endl;
                 }
-                else{
-                    cout<<"Macierz A nie jest diagonalna"<<endl;
-                }
-                delMatrix(A,m);
+                delMatrix(A, m);
             }
         }
-        if (strcmp(argv[1], "sortRow") == 0){
+
+
+
+        if (strcmp(argv[1], "sortRow") == 0) {
             choice();
             int z;
             cin >> z;
-            if(z==1)
-            {
+            if (z == 1) {
                 int m, n;
                 cout << "Wczytaj ilosc wierzy macieczy:" << endl;
                 m = check();
                 cout << "Wczytaj ilosc kolumn macierzy:" << endl;
                 n = check();
                 int **A;
-                A= allocation(m,n);
+                A = allocation(m, n);
 
                 cout << "Wczytaj wartosci do macierzy A:" << endl;
                 cout << "Macierz wczytywana jest wierszami" << endl;
                 saveMatrix(A, m, n);
-            }
-            else if(z==2)
-            {
 
+                sortRowsInMatrix(A, m, n);
+
+                cout << "Macierz A" << endl;
+                printMatrix(A, m, n);
+                delMatrix(A, m);
+            }
+            if (z == 2) {
+                int m, n;
+                cout << "Wczytaj ilosc wierzy macieczy:" << endl;
+                m = check();
+                cout << "Wczytaj ilosc kolumn macierzy:" << endl;
+                n = check();
+                double **A;
+                A = allocations(m, n);
+
+                cout << "Wczytaj wartosci do macierzy A:" << endl;
+                cout << "Macierz wczytywana jest wierszami" << endl;
+                saveMatrix(A, m, n);
+
+                sortRowsInMatrix(A, m, n);
+
+                cout << "Macierz A" << endl;
+                printMatrix(A, m, n);
+                delMatrix(A, m);
             }
         }
+        if (strcmp(argv[1], "sortRowsInMatrix") == 0) {
+            choice();
+            int z;
+            cin >> z;
+            if (z == 1) {
+                int m, n;
+                cout << "Wczytaj ilosc wierzy macieczy:" << endl;
+                m = check();
+                cout << "Wczytaj ilosc kolumn macierzy:" << endl;
+                n = check();
+                int **A;
+                A = allocation(m, n);
 
+                cout << "Wczytaj wartosci do macierzy A:" << endl;
+                cout << "Macierz wczytywana jest wierszami" << endl;
+                saveMatrix(A, m, n);
+
+                sortRowsInMatrix(A, m, n);
+
+                cout << "Macierz A" << endl;
+                printMatrix(A, m, n);
+                delMatrix(A, m);
+
+
+            } else if (z == 2) {
+                int m, n;
+                cout << "Wczytaj ilosc wierzy macieczy:" << endl;
+                m = check();
+                cout << "Wczytaj ilosc kolumn macierzy:" << endl;
+                n = check();
+                double **A;
+                A = allocations(m, n);
+
+
+                cout << "Wczytaj wartosci do macierzy A:" << endl;
+                cout << "Macierz wczytywana jest wierszami" << endl;
+                saveMatrix(A, m, n);
+
+                sortRowsInMatrix(A, m,n);
+
+                cout << "Macierz A" << endl;
+                printMatrix(A, m, n);
+                delMatrix(A, m);
+            }
+        }
+    } else {
+        er();
     }
 }

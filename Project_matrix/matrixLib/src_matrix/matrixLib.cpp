@@ -222,11 +222,11 @@ void sortRow(int* tab, int n)
 }
 
 
-void sortRowsInMatrix(int** t, int m, int n)
+void sortRowsInMatrix(int** a, int m, int n)
 {
 for(int i=0;i<m;i++)
 {
-    sortRow(t[i],n);
+    sortRow(a[i],n);
 }
 }
 
@@ -510,7 +510,7 @@ void choice(){
     cout<<"Double wybierz 2"<<endl;
 }
 
-void err(){
+void er(){
     cout<<"Blad\n";
     cout<<"Zapoznaj sie z dokumentacja\n";
 }

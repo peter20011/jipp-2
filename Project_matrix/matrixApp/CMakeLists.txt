@@ -6,6 +6,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(../matrixLib/include_matrix)
 
-add_executable(matrixApp matrixApp.cpp)
+add_executable(matrixApp main.cpp)
 
 target_link_libraries(matrixApp matrixLib)

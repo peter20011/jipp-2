@@ -603,10 +603,15 @@ int main(int argc, char* argv[]) {
                 delMatrix(A, m);
             }
         }
-    } else {
-        er();
-        help();
     }
+    else if (strcmp(argv[1], "help") == 0)
+             {
+                help();
+                return 0;
+             }
+
     er();
     help();
+return 0;
+
 }

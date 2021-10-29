@@ -142,7 +142,7 @@ int** transpozeMatrix(int** a, int m, int n)
  * @param m ilosc wierszy
  * @param n ilosc kolumn
  * @param p stopien potegi
- * @return wskaznik do nowej macierzy
+ * @return wskaznik do nmacierzy H
  */
 int** powerMatrix(int** a, int m, int n, unsigned int p)
 {
@@ -172,7 +172,7 @@ int** powerMatrix(int** a, int m, int n, unsigned int p)
 }
 /**
  * Funkcja odpowiadajaca za obliczenie wyznacznika macierzy
- * @param a wskaznik do pierwszej macierzy
+ * @param a wskaznik do  macierzy a
  * @param m ilosc wierszy
  * @param n ilosc kolumn
  * @return wartosc wyznacznika
@@ -215,9 +215,9 @@ int determinantMatrix(int** a, int m, int n)// m=n
 
 //funkcje typu void\(int)\bool
 /**
- * Funkcja odpowiadajca za koiowanie macierzy
+ * Funkcja odpowiadajca za powielenie macierzy
  * @param a wskaznik do pierwszej macierzy
- * @param dest wskaznik do drugiej macierzy
+ * @param dest wskaznik do  macierzy dest
  * @param k ilosc powtorzen
  */
 void powiel(int**a, int** dest, int k)
@@ -231,10 +231,10 @@ void powiel(int**a, int** dest, int k)
 }
 /**
  * Funkcja odpowiadajaca za sprawdzenie czy macierz jest diagonalna
- * @param a wskaznik do pierwszej macierzy
+ * @param a wskaznik do  macierzy a
  * @param m ilosc wierszy
  * @param n ilosc kolumn
- * @return
+ * @return Prawda albo fałsz
  */
 bool matrixIsDiagonal(int** a,int m,int n)
 {
@@ -251,14 +251,22 @@ bool matrixIsDiagonal(int** a,int m,int n)
     }
     return true;
 }
-
+/**
+ * Funkcja zamieniajaca  dwie wartosci miejscami/ parametry przekazywane przez referencję
+ * @param a liczba a
+ * @param b liczba b
+ */
 void swap(int& a, int& b)
 {
     int tmp=a;
     a=b;
     b=tmp;
 }
-
+/**
+ * Funkcja odpowiadająca za sotowanie wiersza macierzy- sortowanie bombelkowe
+ * @param tab wskaznik do macierzy
+ * @param n ilosc kolumn
+ */
 void sortRow(int* tab, int n)
 {
     for(int i=0;i<n;i++)
@@ -272,7 +280,12 @@ void sortRow(int* tab, int n)
         }
     }
 }
-
+/**
+ * Funkcja odpowiadajaca za sortowanie wierszy w macierzy-sortowanie bombelkowe
+ * @param a wskaznik do macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ */
 
 void sortRowsInMatrix(int** a, int m, int n)
 {
@@ -284,6 +297,14 @@ for(int i=0;i<m;i++)
 
 
 //funkccje o typie double
+/**
+* Funkcja odpowiadająca za dodawanie macierzy
+* @param a wskaznik do pierwszej macierzy
+* @param b wskaznik do drugiej macierzy
+* @param m ilosc wierszy
+* @param n ilosc kolumn
+* @return wskazmik do macierzy C
+*/
 
 double** addMatrix(double** a, double** b, int m, int n)
 {
@@ -302,7 +323,14 @@ double** addMatrix(double** a, double** b, int m, int n)
 
     return C;
 }
-
+/**
+ * Funkcja odpowiadająca za odejmowanie macierzy
+ * @param a wskaznik do  macierzy a
+ * @param b wskaznik do  macierzy b
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @return wskazmik do  macierzy D
+ */
 double** subtractMatrix(double** a, double** b, int m, int n)
 {
     double **D= new double *[m]; // dynamiczna alokacja tablicy wynikowej
@@ -320,7 +348,15 @@ double** subtractMatrix(double** a, double** b, int m, int n)
 
     return D;
 }
-
+/**
+ * Funkcja odpowiadająca za mnozenie macierzy
+ * @param a wskaznik do  macierzy a
+ * @param b wskaznik do  macierzy b
+ * @param m ilosc wierszy pierwszej macierzy
+ * @param n ilosc kolumn pierwszej macierzy
+ * @param s ilosc kolumn drugiej macierzy
+ * @return wskazmik do  macierzy E
+ */
 double** multiplyMatrix(double** a, double** b, int m, int n, int s)
 {
     double z;
@@ -345,7 +381,14 @@ double** multiplyMatrix(double** a, double** b, int m, int n, int s)
     return E;
 
 }
-
+/**
+ * Funkcja odpowiadająca za pomnozenie macierzy przez skalar
+ * @param a wskaznik do  macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @param k wartosc skalara
+ * @return wskaznik do  macierzy F
+ */
 double** multiplyByScalar(double** a, int m, int n, double p)
 {
     double** F=new double*[m];
@@ -362,7 +405,13 @@ double** multiplyByScalar(double** a, int m, int n, double p)
     }
     return F;
 }
-
+/**
+ * Funkcja odpowiadajaca za transponowanie macierzy
+ * @param a wskaznik do  macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @return wskaznik do macierzy G
+ */
 double** transpozeMatrix(double** a, int m, int n)
 {
     double** G=new double *[n];
@@ -380,7 +429,14 @@ double** transpozeMatrix(double** a, int m, int n)
 
     return G;
 }
-
+/**
+ * Funkcja odpowiadajaca za potegowanie macierzy
+ * @param a wskaznik do  macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @param p stopien potegi
+ * @return wskaznik do nmacierzy H
+ */
 double** powerMatrix(double** a, int m, int n, unsigned int p)
 {
     double** H=new double *[n];
@@ -407,7 +463,13 @@ double** powerMatrix(double** a, int m, int n, unsigned int p)
 
     return H;
 }
-
+/**
+ * Funkcja odpowiadajaca za obliczenie wyznacznika macierzy
+ * @param a wskaznik do  macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @return wartosc wyznacznika
+ */
 double determinantMatrix(double** a, int m, int n)// m=n
 {
     double det = 0;
@@ -445,7 +507,12 @@ double determinantMatrix(double** a, int m, int n)// m=n
 }
 
 //funkcje typu void\(double)\bool
-
+/**
+ * Funkcja odpowiadajca za powielenie macierzy
+ * @param a wskaznik do pierwszej macierzy
+ * @param dest wskaznik do  macierzy dest
+ * @param k ilosc powtorzen
+ */
 void powiel(double**a, double** d, int g)
 {
 for(int i=0;i<g;i++)
@@ -456,7 +523,13 @@ for(int i=0;i<g;i++)
     }
 }
 }
-
+/**
+ * Funkcja odpowiadajaca za sprawdzenie czy macierz jest diagonalna
+ * @param a wskaznik do  macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @return Prawda albo fałsz
+ */
 bool matrixIsDiagonal(double** a,int m,int n)
 {
     for(int i=0;i<m;i++)
@@ -472,14 +545,22 @@ bool matrixIsDiagonal(double** a,int m,int n)
     }
     return true;
 }
-
+/**
+ * Funkcja zamieniajaca  dwie wartosci miejscami/ parametry przekazywane przez referencję
+ * @param a liczba a
+ * @param b liczba b
+ */
 void swap(double& a, double& b)
 {
     double tmp=a;
     a=b;
     b=tmp;
 }
-
+/**
+ * Funkcja odpowiadająca za sotowanie wiersza macierzy- sortowanie bombelkowe
+ * @param tab wskaznik do macierzy
+ * @param n ilosc kolumn
+ */
 void sortRow(double* t, int m)
 {
     for(int i=0;i<m;i++)
@@ -493,7 +574,12 @@ void sortRow(double* t, int m)
         }
     }
 }
-
+/**
+ * Funkcja odpowiadajaca za sortowanie wierszy w macierzy-sortowanie bombelkowe
+ * @param a wskaznik do macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ */
 
 void sortRowsInMatrix(double** t, int m, int n)
 {
@@ -504,6 +590,12 @@ void sortRowsInMatrix(double** t, int m, int n)
 }
 
 //funkcje pomocnicze
+/**
+ * Funkcja odpowiadajaza za wypisanie macirzy
+ * @param a wskaznik do macierzy a
+ * @param m ilosc wierszy
+ * @param n ilowsc kolumn
+ */
 void printMatrix(int **a, int m,int n)
 {
     int w, k;
@@ -514,7 +606,12 @@ void printMatrix(int **a, int m,int n)
     }
 }
 
-
+/**
+ * Funkcja odpowiadajaza za wypisanie macirzy
+ * @param a wskaznik do macierzy a
+ * @param m ilosc wierszy
+ * @param n ilowsc kolumn
+ */
 void printMatrix(double**a,int m,int n)
 {
     int w, k;
@@ -525,7 +622,12 @@ void printMatrix(double**a,int m,int n)
     }
 }
 
-
+/**
+ * Funkcja odpowiadajaca za zapisanie macierzy w pamieci
+ * @param a wskaznik do macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ */
 void saveMatrix(int**a,int m,int n)
 {
     int w, k;
@@ -538,6 +640,12 @@ void saveMatrix(int**a,int m,int n)
     }
 }
 
+/**
+ * Funkcja odpowiadajaca za zapisanie macierzy w pamieci
+ * @param a wskaznik do macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ */
 void saveMatrix(double**a,int m,int n)
 {
     int w, k;
@@ -552,18 +660,26 @@ void saveMatrix(double**a,int m,int n)
 }
 
 
-
+/**
+ * Funkcja infomujaca użytkownika o mozliwosci wyboru
+ */
 void choice(){
     cout<<"Jaki rodzaj macierzy chcesz wczytac"<<endl;
     cout<<"Int wybierz 1"<<endl;
     cout<<"Double wybierz 2"<<endl;
 }
-
+/**
+ * Funkcja informujaca uzytkownika o bledzie
+ */
 void er(){
     cout<<"Blad\n";
     cout<<"Zapoznaj sie z dokumentacja\n";
 }
-
+/**
+ * Funkcja odpowiadajaca za usuwanie dynamicznie alokowanej macierzy z pamieci
+ * @param a wskaznik do macierzy a
+ * @param m ilosc wierszy
+ */
 void delMatrix(int** a, int m)
 {
     for( int i = 0; i < m; ++i )
@@ -571,7 +687,11 @@ void delMatrix(int** a, int m)
 
     delete [] a;
 }
-
+/**
+ * Funkcja odpowiadajaca za usuwanie dynamicznie alokowanej macierzy z pamieci
+ * @param a wskaznik do macierzy a
+ * @param m ilosc wierszy
+ */
 void delMatrix(double**a,int m)
 {
     for( int i = 0; i < m; ++i )
@@ -579,7 +699,12 @@ void delMatrix(double**a,int m)
 
     delete [] a;
 }
-
+/**
+ * Funkcja odpowiadajaca za dynamiczna alokacjie pamieci dla macierzy
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @return wskaznik do macierzy a
+ */
 int **allocation( int m, int n)
 {
     int **a = new int* [ m ];
@@ -589,7 +714,12 @@ int **allocation( int m, int n)
 
     return a;
 }
-
+/**
+ * Funkcja odpowiadajaca za dynamiczna alokacjie pamieci dla macierzy
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @return wskaznik do macierzy a
+ */
 double **allocations( int m, int n)
 {
     double **a = new double* [ m ];
@@ -600,7 +730,9 @@ double **allocations( int m, int n)
     return a;
 }
 
-
+/*
+ * Funkcja sprwdzajaca czy dana podana przez uzytkonika jest literą lub cyfra/liczb
+ */
 int check(){
     unsigned int liczba;
     while(true)
@@ -623,7 +755,9 @@ int check(){
     return liczba;
 
 }
-
+/*
+ * Funkcja sprwdzajaca czy dana podana przez uzytkonika jest literą lub cyfra/liczb
+ */
 double check_double(){
     double liczba;
     while(true)
@@ -644,7 +778,9 @@ double check_double(){
     return liczba;
 
 }
-
+/*
+ * Funckja pomocnicza dla użytkownika
+ */
 void help(){
     cout<<"Dokumentacja-mozliwe operacje: "<<endl;
     cout<<"\t1.Dodawanie macierzy po dopisaniu komendy-""addMatrix"<<endl;

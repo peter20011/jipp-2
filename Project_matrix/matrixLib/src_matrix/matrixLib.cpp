@@ -5,6 +5,8 @@
 #include "matrixLib.h"
 #include <iostream>
 #include <limits>
+
+
 using namespace  std;
 
 //funkccje o typie int
@@ -51,22 +53,25 @@ return D;
 }
 
 int** multiplyMatrix(int** a, int** b, int m, int n, int s)
-{
+{ int z;
 int** E=new int*[m];
 for(int i=0;i<m;i++)
 {
   E[i]=new int[s];
 }
-for(int i=0;i<m;i++)
-{
-    for(int j=0;j<s;j++)
+    for( int i = 0; i < m; i++ )
     {
-        for(int x=0;x<n;x++)
+        for (int j = 0; j < s; j++)
         {
-            E[i][j]=E[i][j]+a[i][j]*b[i][j];
+             z=0;
+            for (int k = 0; k < n; k++)
+            {
+                z += a[i][k] * b[k][j];
+                E[i][j] = z;
+            }
+
         }
     }
-}
 return E;
 }
 
@@ -79,9 +84,8 @@ int** multiplyByScalar(int** a, int m, int n, int k)
     }
     for(int i=0;i<m;i++)
     {
-        for(int j=0;i<n;j++)
-        {
-            F[i][j]=a[i][j]*k;
+        for(int j=0;i<n;j++) {
+            F[i][j] = a[i][j] * k;
         }
     }
     return F;
@@ -267,22 +271,27 @@ double** subtractMatrix(double** a, double** b, int m, int n)
 
 double** multiplyMatrix(double** a, double** b, int m, int n, int s)
 {
+    double z;
     double** E=new double*[m];
     for(int i=0;i<m;i++)
     {
         E[i]=new double[s];
     }
-    for(int i=0;i<m;i++)
+    for( int i = 0; i < m; i++ )
     {
-        for(int j=0;j<s;j++)
+        for (int j = 0; j < s; j++)
         {
-            for(int x=0;x<n;x++)
+            z=0;
+            for (int k = 0; k < n; k++)
             {
-                E[i][j]=E[i][j]+a[i][j]*b[i][j];
+                z += a[i][k] * b[k][j];
+                E[i][j] = z;
             }
+
         }
     }
     return E;
+
 }
 
 double** multiplyByScalar(double** a, int m, int n, double p)
@@ -459,7 +468,7 @@ void printMatrix(double**a,int m,int n)
     int w, k;
     for (w = 0; w < m; w++) {
         for (k = 0; k < n; k++)
-            cout << a[w][k] << "  ";
+            cout <<a[w][k] << "  ";
         cout << endl;
     }
 }
@@ -470,9 +479,9 @@ void saveMatrix(int**a,int m,int n)
     int w, k;
     for (w = 0; w < m; w++) {
         for (k = 0; k < n; k++) {
-            int o;
-            o=check();
-            a[w][k]=o;
+            int save;
+            save=check();
+            a[w][k]=save;
         }
     }
 }
@@ -482,7 +491,9 @@ void saveMatrix(double**a,int m,int n)
     int w, k;
     for (w = 0; w < m; w++) {
         for (k = 0; k < n; k++) {
-            cin >> a[w][k];
+            double save;
+            save=check_double();
+            a[w][k]=save;
         }
     }
 
@@ -552,6 +563,27 @@ int check(){
             cin.clear();
             cin.ignore(INT_MAX,'\n');
 
+        }
+        else{
+            break;
+        }
+    }
+
+
+    return liczba;
+
+}
+
+double check_double(){
+    double liczba;
+    while(true)
+    {
+        cin >> liczba;
+        if(cin.fail())
+        {
+            cout << "Blad" << endl;
+            cin.clear();
+            cin.ignore(INT_MAX,'\n');
         }
         else{
             break;

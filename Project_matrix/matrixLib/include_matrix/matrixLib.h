@@ -83,4 +83,6 @@ void err();
 
 int check();
 
+double check_double();
+
 #endif //JIPP_2_MATRIXLIB_H

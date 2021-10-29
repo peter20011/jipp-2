@@ -13,11 +13,11 @@ using namespace  std;
 
 /**
  * Funkcja odpowiadająca za dodawanie macierzy
- * @param a przekazanie macierzy a do funckji
- * @param b przekazanie macierzy a do funckji
- * @param m ilość
- * @param n
- * @return
+ * @param a wskaznik do pierwszej macierzy
+ * @param b wskaznik do drugiej macierzy
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @return wskazmik do macierzy C
  */
 int** addMatrix(int** a, int** b, int m, int n)
 {
@@ -33,7 +33,14 @@ int** addMatrix(int** a, int** b, int m, int n)
 
    return C;
 }
-
+/**
+ * Funkcja odpowiadająca za odejmowanie macierzy
+ * @param a wskaznik do  macierzy a
+ * @param b wskaznik do  macierzy b
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @return wskazmik do  macierzy D
+ */
 int** subtractMatrix(int** a, int** b, int m, int n)
 {
     int **D= new int *[m]; // dynamiczna alokacja tablicy wynikowej
@@ -51,7 +58,15 @@ int** subtractMatrix(int** a, int** b, int m, int n)
 
 return D;
 }
-
+/**
+ * Funkcja odpowiadająca za mnozenie macierzy
+ * @param a wskaznik do  macierzy a
+ * @param b wskaznik do  macierzy b
+ * @param m ilosc wierszy pierwszej macierzy
+ * @param n ilosc kolumn pierwszej macierzy
+ * @param s ilosc kolumn drugiej macierzy
+ * @return wskazmik do  macierzy E
+ */
 int** multiplyMatrix(int** a, int** b, int m, int n, int s)
 { int z;
 int** E=new int*[m];
@@ -74,7 +89,14 @@ for(int i=0;i<m;i++)
     }
 return E;
 }
-
+/**
+ * Funkcja odpowiadająca za pomnozenie macierzy przez skalar
+ * @param a wskaznik do  macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @param k wartosc skalara
+ * @return wskaznik do  macierzy F
+ */
 int** multiplyByScalar(int** a, int m, int n, int k)
 {
     int** F=new int*[m];
@@ -90,7 +112,13 @@ int** multiplyByScalar(int** a, int m, int n, int k)
     }
     return F;
 }
-
+/**
+ * Funkcja odpowiadajaca za transponowanie macierzy
+ * @param a wskaznik do  macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @return wskaznik do macierzy G
+ */
 int** transpozeMatrix(int** a, int m, int n)
 {
     int** G=new int *[n];
@@ -108,7 +136,14 @@ int** transpozeMatrix(int** a, int m, int n)
 
     return G;
 }
-
+/**
+ * Funkcja odpowiadajaca za potegowanie macierzy
+ * @param a wskaznik do  macierzy a
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @param p stopien potegi
+ * @return wskaznik do nowej macierzy
+ */
 int** powerMatrix(int** a, int m, int n, unsigned int p)
 {
     int** H=new int *[n];
@@ -135,7 +170,13 @@ int** powerMatrix(int** a, int m, int n, unsigned int p)
 
     return H;
 }
-
+/**
+ * Funkcja odpowiadajaca za obliczenie wyznacznika macierzy
+ * @param a wskaznik do pierwszej macierzy
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @return wartosc wyznacznika
+ */
 int determinantMatrix(int** a, int m, int n)// m=n
 {
     int det = 0;
@@ -173,7 +214,12 @@ int determinantMatrix(int** a, int m, int n)// m=n
 }
 
 //funkcje typu void\(int)\bool
-
+/**
+ * Funkcja odpowiadajca za koiowanie macierzy
+ * @param a wskaznik do pierwszej macierzy
+ * @param dest wskaznik do drugiej macierzy
+ * @param k ilosc powtorzen
+ */
 void powiel(int**a, int** dest, int k)
 {
     for(int i=0;i<k;i++)
@@ -183,7 +229,13 @@ void powiel(int**a, int** dest, int k)
         }
 
 }
-
+/**
+ * Funkcja odpowiadajaca za sprawdzenie czy macierz jest diagonalna
+ * @param a wskaznik do pierwszej macierzy
+ * @param m ilosc wierszy
+ * @param n ilosc kolumn
+ * @return
+ */
 bool matrixIsDiagonal(int** a,int m,int n)
 {
     for(int i=0;i<m;i++)
@@ -499,10 +551,7 @@ void saveMatrix(double**a,int m,int n)
 
 }
 
-void help(){
-    cout<<"Dokumentacja";
 
-}
 
 void choice(){
     cout<<"Jaki rodzaj macierzy chcesz wczytac"<<endl;
@@ -560,6 +609,7 @@ int check(){
         if(cin.fail())
         {
             cout << "Blad" << endl;
+            cout<<"Sprobuj ponownie"<<endl;
             cin.clear();
             cin.ignore(INT_MAX,'\n');
 
@@ -593,4 +643,24 @@ double check_double(){
 
     return liczba;
 
+}
+
+void help(){
+    cout<<"Dokumentacja-mozliwe operacje: "<<endl;
+    cout<<"\t1.Dodawanie macierzy po dopisaniu komendy-""addMatrix"<<endl;
+    cout<<"\t2.Odejmowanie macierzy po dopisaniu komendy-""subtractMatrix"<<endl;
+    cout<<"\t3.Mnozenie macierzy po dopisaniu komendy-""multiplyMatrix"<<endl;
+    cout<<"\t4.Mnozenie macierzy przez skalar po dopisaniu komendy-""multiplyByScalar"<<endl;
+    cout<<"\t5.Transponowanie macierzy po dopisaniu komendy-""transpozeMatrix"<<endl;
+    cout<<"\t6.Potegowanie macierzy po dopisaniu komendy-""powerMatrix"<<endl;
+    cout<<"\t7.Obliczanie wyznacznika macierzy po dopisaniu komendy-""determinantMatrix"<<endl;
+    cout<<"\t7.Obliczanie wyznacznika macierzy po dopisaniu komendy-""determinantMatrix"<<endl;
+    cout<<"\t9.Sprawdzenie czy macierz jest diagonalna po dopisaniu komendy-""matrixIsDiagonal"<<endl;
+    cout<<"\t10.Sortowanie wybranego wiersza macierzy po dopisaniu komendy-""sortRow"<<endl;
+    cout<<"\t11.Sortowanie wszystkich wierszy macierzy po dopisaniu komendy-""sortRowsInMatrix"<<endl;
+    cout<<"\t12.Wyswietlenie dokumentacji po podaniu koemndy-""help"<<endl;
+    cout<<endl;
+
+    cout<<"Macierz wczytywana jest odpowiednio wierszami"<<endl;
+    cout<<"Opis funkcji z parametrami znajduje sie w pliku matrixLib.cpp"<<endl;
 }

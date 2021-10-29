@@ -515,7 +515,6 @@ int main(int argc, char* argv[]) {
         }
 
 
-
         if (strcmp(argv[1], "sortRow") == 0) {
             choice();
             int z;
@@ -597,7 +596,7 @@ int main(int argc, char* argv[]) {
                 cout << "Macierz wczytywana jest wierszami" << endl;
                 saveMatrix(A, m, n);
 
-                sortRowsInMatrix(A, m,n);
+                sortRowsInMatrix(A, m, n);
 
                 cout << "Macierz A" << endl;
                 printMatrix(A, m, n);
@@ -606,5 +605,8 @@ int main(int argc, char* argv[]) {
         }
     } else {
         er();
+        help();
     }
+    er();
+    help();
 }

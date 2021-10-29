@@ -75,8 +75,6 @@ int **allocation(int m, int n);
 
 double **allocations(int m,int n);
 
-void help();
-
 void choice();
 
 void er();
@@ -85,4 +83,5 @@ int check();
 
 double check_double();
 
+void help();
 #endif //JIPP_2_MATRIXLIB_H

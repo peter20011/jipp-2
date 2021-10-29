@@ -84,7 +84,7 @@ int** multiplyByScalar(int** a, int m, int n, int k)
     }
     for(int i=0;i<m;i++)
     {
-        for(int j=0;i<n;j++) {
+        for(int j=0;j<n;j++) {
             F[i][j] = a[i][j] * k;
         }
     }
@@ -174,14 +174,14 @@ int determinantMatrix(int** a, int m, int n)// m=n
 
 //funkcje typu void\(int)\bool
 
-void powiel(int**a, int** de, int g)
+void powiel(int**a, int** dest, int k)
 {
-    for(int i=0;i<g;i++)
-    {
-        for(int j=0;j<g;j++){
-            de[i][j]=a[i][j];
+    for(int i=0;i<k;i++)
+        for(int j=0;j<k;j++)
+        {
+            dest[i][j]=a[i][j];
         }
-    }
+
 }
 
 bool matrixIsDiagonal(int** a,int m,int n)
@@ -303,7 +303,7 @@ double** multiplyByScalar(double** a, int m, int n, double p)
     }
     for(int i=0;i<m;i++)
     {
-        for(int j=0;i<n;j++)
+        for(int j=0;j<n;j++)
         {
             F[i][j]=a[i][j]*p;
         }
@@ -553,7 +553,7 @@ double **allocations( int m, int n)
 
 
 int check(){
-    int liczba;
+    unsigned int liczba;
     while(true)
     {
         cin >> liczba;

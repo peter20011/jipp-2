@@ -1,5 +1,5 @@
 //
-// Created by PW on 13.11.2021.
+// Created by PW on 19.11.2021.
 //
 
 #include "Point.h"
@@ -11,11 +11,6 @@ Point::Point(double x, double y, string name) : name(name) {
 
 Point::Point(string name) : name(name) {
     *x = *y = 0;
-}
-
-Point::~Point(){
-    delete x;
-    delete y;
 }
 
 double Point::getX() {
@@ -54,4 +49,16 @@ bool Point::operator!=(const Point &rhs) const {
 
 const string &Point::getName() const {
     return name;
+}
+
+Point::~Point() {
+    delete x;
+    delete y;
+}
+
+Point::Point(Point &point) {
+    name = point.name;
+
+    *x = *point.x;
+    *y = *point.y;
 }

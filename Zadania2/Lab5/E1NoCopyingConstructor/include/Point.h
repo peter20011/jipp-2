@@ -1,9 +1,12 @@
 //
-// Created by PW on 13.11.2021.
+// Created by PW on 19.11.2021.
 //
 
 #ifndef JIPP_2_POINT_H
 #define JIPP_2_POINT_H
+#ifndef CHECKER_POINT_H
+#define CHECKER_POINT_H
+
 #include <iostream>
 
 using namespace std;
@@ -29,7 +32,16 @@ public:
      */
     Point(string name);
 
+    /**
+     * Delete point values
+     */
     ~Point();
+
+    /**
+     * Create point in 0, 0
+     * @param name pointer reference
+     */
+    Point(Point &point);
 
     /**
      * Update name of point

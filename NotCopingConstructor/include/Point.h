@@ -78,6 +78,6 @@ public:
     ~Point();
 
     Point(Point &point):
-};
+}
 
 #endif //JIPP_2_POINT_H

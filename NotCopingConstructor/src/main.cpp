@@ -7,14 +7,6 @@
 
 using namespace std;
 
-class TestClass {
-private:
-    const int t = 0;
-
-public:
-    TestClass(const int t) : t(t) {
-    }
-};
 
 int main() {
     {

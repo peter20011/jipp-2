@@ -13,3 +13,5 @@ add_subdirectory(Project_matrix)
 add_subdirectory(NotCopingConstructor)
 
 add_subdirectory(Zadania3)
+
+add_subdirectory(Zadania4)
